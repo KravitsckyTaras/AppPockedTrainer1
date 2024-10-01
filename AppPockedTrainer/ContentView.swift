@@ -6,9 +6,8 @@ struct ButtonData {
     let size: CGFloat
 }
 
-// Пример данных для кнопок
+// Обновленный список данных для кнопок
 let buttonData = [
-    ButtonData(imageName: "START", size: 450),
     ButtonData(imageName: "Arny2", size: 450),
     ButtonData(imageName: "KayG", size: 450),
     ButtonData(imageName: "Kevin", size: 450),
@@ -33,44 +32,65 @@ struct ContentView: View {
                     // Три кнопки с пользовательскими изображениями вверху
                     HStack {
                         // Первая кнопка с переходом на MusclesView
-                        NavigationLink(destination: Muscules()) {
-                            Image("worckaut")
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                                .padding()
-                                .background(Color.black.opacity(0.4)) // Цвет фона с прозрачностью
-                                .cornerRadius(10) // Скругление углов фона
+                        VStack {
+                            NavigationLink(destination: Muscules()) {
+                                Image("worckaut")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .padding()
+                                    .background(Color.black.opacity(0.4)) // Цвет фона с прозрачностью
+                                    .cornerRadius(10) // Скругление углов фона
+                            }
+                            Text("Вправи.") // Добавьте текст под кнопкой
+                                .padding(1)
+                                .background(Color.black.opacity(0.2))
+                                .font(.system(size: 15))
+                                .foregroundColor(.black)
+                                .fontWeight(.bold)
+                                .cornerRadius(4)
+                                .padding(5)
                         }
                         
                         // Вторая кнопка с переходом на BicepsView
-                        NavigationLink(destination: MyData()) {
-                            Image("biceps")
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                                .padding()
-                                .background(Color.black.opacity(0.4)) // Цвет фона с прозрачностью
-                                .cornerRadius(10) // Скругление углов фона
+                        VStack {
+                            NavigationLink(destination: MyData()) {
+                                Image("biceps")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .padding()
+                                    .background(Color.black.opacity(0.4)) // Цвет фона с прозрачностью
+                                    .cornerRadius(10) // Скругление углов фона
+                            }
+                            Text("Заміри.") // Добавьте текст под кнопкой
+                                .padding(1)
+                                .background(Color.black.opacity(0.2))
+                                .font(.system(size: 15))
+                                .foregroundColor(.black)
+                                .fontWeight(.bold)
+                                .cornerRadius(4)
+                                .padding(5)
                         }
-                        
+
                         // Третья кнопка с переходом на NotebookView
-                        NavigationLink(destination: BoockTraining()) {
-                            Image("blaknot")
-                                .resizable()
-                                .frame(width: 80, height: 80)
-                                .padding()
-                                .background(Color.black.opacity(0.4)) // Цвет фона с прозрачностью
-                                .cornerRadius(10) // Скругление углов фона
+                        VStack {
+                            NavigationLink(destination: ScrolWeuve()) {
+                                Image("blaknot")
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .padding()
+                                    .background(Color.black.opacity(0.4)) // Цвет фона с прозрачностью
+                                    .cornerRadius(10) // Скругление углов фона
+                            }
+                            Text("Тренування.") // Добавьте текст под кнопкой
+                                .padding(1)
+                                .background(Color.black.opacity(0.2))
+                                .font(.system(size: 15))
+                                .foregroundColor(.black)
+                                .fontWeight(.bold)
+                                .cornerRadius(4)
+                                .padding(5)
                         }
                     }
-                    
-                    // Заголовок под кнопками
-                    Text("Обери план тренуваннь")
-                        .font(.title)
-                        .foregroundColor(.black)
-                        .multilineTextAlignment(.center)
-                        .padding(25) // Отступы вокруг текста для лучшего внешнего вида фона
-                        .background(Color.black.opacity(0.4)) // Цвет фона с прозрачностью
-                        .cornerRadius(10) // Скругление углов фона
                     
                     ScrollViewReader { proxy in
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -88,7 +108,7 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                            .frame(height: 450) // Высота ScrollView
+                            .frame(height: 500) // Высота ScrollView
                             .padding(.horizontal) // Отступы по горизонтали для ScrollView
                         }
                         .frame(width: 390) // Ширина ScrollView
@@ -98,13 +118,14 @@ struct ContentView: View {
                     Button(action: {
                         showContactTrainer.toggle() // Показать модальное окно
                     }) {
-                        Text("Звязатися з тренером")
-                            .font(.title2)
+                        Text("Звязок з тренером")
+                            .font(.system(size: 24))
                             .frame(width: 330)
                             .foregroundColor(.black)
                             .padding()
                             .background(Color.black.opacity(0.4))
                             .cornerRadius(10)
+                            .fontWeight(.bold)
                     }
                     .sheet(isPresented: $showContactTrainer) {
                         ByContactTrainer() // Окно с сообщением

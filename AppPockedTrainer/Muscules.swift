@@ -74,7 +74,7 @@ struct Muscules: View {
                         }
                         
                         // Седьмая иконка
-                        NavigationLink(destination: Chest()) {
+                        NavigationLink(destination: Quadro()) {
                             Image("IconMuscle9")
                                 .resizable()
                                 .scaledToFit()
@@ -84,7 +84,7 @@ struct Muscules: View {
                         }
                         
                         // Восьмая иконка
-                        NavigationLink(destination: Chest()) {
+                        NavigationLink(destination: ThingBiceps()) {
                             Image("IconMuscle2")
                                 .resizable()
                                 .scaledToFit()
@@ -94,7 +94,7 @@ struct Muscules: View {
                         }
                         
                         // Девятая иконка
-                        NavigationLink(destination: Chest()) {
+                        NavigationLink(destination: Glutus()) {
                             Image("IconMuscle8")
                                 .resizable()
                                 .scaledToFit()
@@ -104,7 +104,7 @@ struct Muscules: View {
                         }
                         
                         // Десятая иконка
-                        NavigationLink(destination: Chest()) {
+                        NavigationLink(destination: CalfMuscules()) {
                             Image("IconMuscle7")
                                 .resizable()
                                 .scaledToFit()
@@ -124,7 +124,7 @@ struct Muscules: View {
                         }
                         
                         // Двенадцатая иконка
-                        NavigationLink(destination: Chest()) {
+                        NavigationLink(destination: Core()) {
                             Image("IconMuscle6")
                                 .resizable()
                                 .scaledToFit()
